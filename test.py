@@ -1,7 +1,0 @@
-print("Halo python")
-print("My name is Jedsadaporn sutthiwatanakumjorn")
-print("My nickname is paint")
-print("My old is 19 year old")
-print("my number is 3")
-print("My stid is 67319010003")
-print("My Hobby is listen music")
