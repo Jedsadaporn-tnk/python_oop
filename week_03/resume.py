@@ -1,0 +1,13 @@
+name = str(input("โปรดกรอกชื่อจริง-นามสกุล : "))
+age = int(input("โปรดกรอกอายุ : "))
+id = int(input("โปรดกรอกรหัสนักศึกษา : "))
+gl = int(input("โปรดกรอกระดับชั้น : "))
+nick = str(input("โปรดกรอกชื่อเล่น : "))
+hight = float(input("โปรดกรอกส่วนสูง : "))
+weight = float(input("โปรดกรอกน้ำหนัก : "))
+hplusw = hight + weight
+print("ชื่อ:  ",name,"อายุ: ",age,"ปี")
+print("รหัสประจำตัวนักเรียน: ",id,"ระดับชั้น: ",gl)
+print("ชื่อเล่น: ",nick)
+print("ส่วนสูง: ",hight,"เซนติเมตร","น้ำหนัก: ",weight,"น้ำหนัก")
+print("ส่วนสูง + น้ำหนัก = ",hplusw)
