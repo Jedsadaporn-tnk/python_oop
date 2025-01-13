@@ -1,7 +1,7 @@
 class Product:
     def __init__(self,name,stock):
         self.name = name
-        self.__price = []
+        self.__price = [700]
         self.__stock = stock
     def add(self):
         self.__stock += instock
@@ -9,7 +9,7 @@ class Product:
         self.__stock -= instock
     def edit(self):
         inprice = int(input('กรอกราคาสินค้า'))
-        self.__price.append(inprice)
+        self.__price[0] = inprice
     def detail(self):
         return (f'(มีราคา {self.__price} บาท จำนวน {self.__stock} ชิ้น)')
 
