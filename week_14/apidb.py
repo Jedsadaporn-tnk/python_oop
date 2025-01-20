@@ -67,4 +67,3 @@ class managedb:
             return False
 market_db = managedb('localhost','root','o8iLiuTii,ik=','market')
 print(market_db.selecctdb('user'))
-print(market_db.insert())
