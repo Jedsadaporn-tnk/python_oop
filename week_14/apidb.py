@@ -15,7 +15,7 @@ class managedb:
             self.mycursor.execute(sql)
             show = self.mycursor.fetchall()
             return show
-    def insert(self,name,password,email,role):
+    def insertus(self,name,password,email,role):
             sql = 'insert into user values (%s ,%s ,%s ,%s ,%s)'
             val_sql = (None,name,password,email,role)
             self.mycursor.execute(sql,val_sql)
@@ -24,7 +24,7 @@ class managedb:
                 return True
             else:
                 return False
-    def insert(self,usid,date,amount,sta,prid):
+    def insertor(self,usid,date,amount,sta,prid):
             sql = 'insert into order  values (%s ,%s ,%s ,%s ,%s ,%s)'
             val_sql = (None,usid,date,amount,sta,prid)
             self.mycursor.execute(sql,val_sql)
@@ -33,7 +33,7 @@ class managedb:
                 return True
             else:
                 return False
-    def insert(self,name):
+    def insertca(self,name):
             sql = 'insert into categories  values (%s ,%s)'
             val_sql = (None,name)
             self.mycursor.execute(sql,val_sql)
@@ -42,7 +42,7 @@ class managedb:
                 return True
             else:
                 return False
-    def insert(self,name,des,price,stock,id):
+    def insertva(self,name,des,price,stock,id):
             sql = 'insert into product values (%s ,%s ,%s ,%s ,%s ,%s)'
             val_sql = (None,name,des,price,stock,id)
             self.mycursor.execute(sql,val_sql)
@@ -67,3 +67,4 @@ class managedb:
             return False
 market_db = managedb('localhost','root','o8iLiuTii,ik=','market')
 print(market_db.selecctdb('user'))
+print(market_db.insert())
