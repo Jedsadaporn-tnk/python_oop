@@ -42,9 +42,9 @@ async def insertca(name):
         return True
     else:
         return False
-@app.get('/insertva/{name}/{des}/{price}/{stock}/{id}')
+@app.get('/insertpd/{name}/{des}/{price}/{stock}/{id}')
 async def insertca(name,des,price,stock,id):
-    sql = 'insert into categories values (%s, %s, %s, %s, %s)'
+    sql = 'insert into product values (%s, %s, %s, %s, %s)'
     val_sql = (None,name,des,price,stock,id)
     mycursor.execute(sql,val_sql)
     database.mydb.commit()
