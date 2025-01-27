@@ -12,12 +12,14 @@ class managedb:
                 )
             self.mycursor = self.mydb.cursor()
             
+            
     @app.get('/show/{table}')       
     async def selecctdb (self,table):
             sql = f'select * from {table}'
             self.mycursor.execute(sql)
             show = self.mycursor.fetchall()
             return show
+    @app.get('/insertus/{name},{password}/{email}/{role}')
     def insertus(self,name,password,email,role):
             sql = 'insert into user values (%s ,%s ,%s ,%s ,%s)'
             val_sql = (None,name,password,email,role)
@@ -27,6 +29,7 @@ class managedb:
                 return True
             else:
                 return False
+    @app.get('/isnertor/{usid}/{date}/{amount}/{sta}/{prid}')
     def insertor(self,usid,date,amount,sta,prid):
             sql = 'insert into order  values (%s ,%s ,%s ,%s ,%s ,%s)'
             val_sql = (None,usid,date,amount,sta,prid)
@@ -36,6 +39,7 @@ class managedb:
                 return True
             else:
                 return False
+    @app.get('/insertca/{name}')
     def insertca(self,name):
             sql = 'insert into categories  values (%s ,%s)'
             val_sql = (None,name)
@@ -45,6 +49,7 @@ class managedb:
                 return True
             else:
                 return False
+    @app.get('/insertva/{name}/{des}/{price}/{stock}/{id}')
     def insertva(self,name,des,price,stock,id):
             sql = 'insert into product values (%s ,%s ,%s ,%s ,%s ,%s)'
             val_sql = (None,name,des,price,stock,id)
@@ -54,11 +59,13 @@ class managedb:
                 return True
             else:
                 return False
+    @app.get('/delete/{table}/{id}')
     def delete(self,table,id):
         sql = f'delete from {table} where user_id = {id}'
         self.mycursor.execute(sql)
         show = self.mycursor.fetchall()
         return show
+    @app.get('/edit/{table}/{colum}/{idname}/{val}/{id}')
     def editdb(self,table,colum,idname,val,id):
         sql = f'UPDATE {table} SET {colum} = " %s" WHERE {idname} = %s'
         val_sql = (val,id)
