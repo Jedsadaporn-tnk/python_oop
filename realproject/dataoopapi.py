@@ -1,5 +1,6 @@
 import mysql.connector
-
+import fastapi 
+app = fastapi.FastAPI()
 
 class managedb:
     def __init__(self,host,user,password,database):
@@ -10,7 +11,9 @@ class managedb:
                 database = database
                 )
             self.mycursor = self.mydb.cursor()
-    def selecctdb (self,table):
+            
+    @app.get('/show/{table}')       
+    async def selecctdb (self,table):
             sql = f'select * from {table}'
             self.mycursor.execute(sql)
             show = self.mycursor.fetchall()
@@ -65,6 +68,3 @@ class managedb:
             return True
         else:
             return False
-market_db = managedb('localhost','root','o8iLiuTii,ik=','market')
-print(market_db.selecctdb('user'))
-print(market_db.insertus('ikai',1234,'kai@gmail.com','admin'))
